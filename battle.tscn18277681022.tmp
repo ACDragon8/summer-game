@@ -65,11 +65,5 @@ offset_bottom = 7269.45
 text = "Health"
 metadata/_edit_use_anchors_ = true
 
-[node name="Card" parent="." node_paths=PackedStringArray("return_position") instance=ExtResource("4_i431l")]
+[node name="Card" parent="." instance=ExtResource("4_i431l")]
 position = Vector2(528, 632)
-return_position = NodePath("../CardPosition")
-
-[node name="CardPosition" type="Marker2D" parent="."]
-position = Vector2(528, 640)
-
-[connection signal="play_card" from="Card" to="." method="_on_card_play_card"]

@@ -1,15 +1,20 @@
 extends Node2D
 
+var player_hp
+var enemy_hp
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	player_hp = 100
+	enemy_hp = 100
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	$Player/PlayerHP.text = "Health: %s" % player_hp
+	$Enemy/EnemyHP.text = "Health: %s" % enemy_hp
 
 
-func player_attack():
-	pass
+func _on_card_play_card(name):
+	#placeholder until we can figure out how to play different cards
+	enemy_hp -= 10
