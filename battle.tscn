@@ -54,10 +54,10 @@ sprite_frames = SubResource("SpriteFrames_i431l")
 
 [node name="EnemyHP" type="Label" parent="Enemy"]
 anchors_preset = -1
-anchor_left = 5.3755
+anchor_left = 5.37551
 anchor_top = -15.9972
-anchor_right = 14.6558
-anchor_bottom = 16.704
+anchor_right = 10.2188
+anchor_bottom = -14.4794
 offset_left = -1424.13
 offset_top = 7998.58
 offset_right = -2560.0

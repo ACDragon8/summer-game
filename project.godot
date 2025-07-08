@@ -15,6 +15,10 @@ run/main_scene="uid://52n7o6qni216"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+DragAndDrop="*res://drag_and_drop.gd"
+
 [display]
 
 window/size/viewport_width=1280

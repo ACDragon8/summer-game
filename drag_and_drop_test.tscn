@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://0dwtn3u7i1ff"]
+
+[ext_resource type="PackedScene" uid="uid://citf4a7xk8df0" path="res://platform.tscn" id="1_v8iiy"]
+[ext_resource type="PackedScene" uid="uid://b5gwsrsi65lh" path="res://object.tscn" id="2_fgm6f"]
+
+[node name="DragAndDropTest" type="Node2D"]
+
+[node name="platform" parent="." instance=ExtResource("1_v8iiy")]
+position = Vector2(248, 416)
+
+[node name="object" parent="." instance=ExtResource("2_fgm6f")]
+position = Vector2(568, 312)
