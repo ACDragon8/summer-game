@@ -2,7 +2,7 @@ extends Area2D
 
 @export var return_position : Marker2D
 
-signal play_card(name)
+signal play_card(card)
 var selected
 var card_name
 

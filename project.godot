@@ -17,7 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-DragAndDrop="*res://drag_and_drop.gd"
+DragAndDrop="*res://Scripts/drag_and_drop.gd"
 
 [display]
 

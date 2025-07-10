@@ -1,15 +1,15 @@
 [gd_scene load_steps=7 format=3 uid="uid://52n7o6qni216"]
 
-[ext_resource type="Script" uid="uid://bhomttdvb7f0u" path="res://battle.gd" id="1_7sfm4"]
-[ext_resource type="Texture2D" uid="uid://7yaxe7knw6jj" path="res://art/Roland.png" id="1_oxp8w"]
-[ext_resource type="Texture2D" uid="uid://cfgoyikadny2w" path="res://art/Tiphereth.png" id="2_7sfm4"]
-[ext_resource type="PackedScene" uid="uid://5d66itewyv70" path="res://card.tscn" id="4_i431l"]
+[ext_resource type="Script" uid="uid://bhomttdvb7f0u" path="res://Scripts/battle.gd" id="1_1otgo"]
+[ext_resource type="Texture2D" uid="uid://7yaxe7knw6jj" path="res://art/Roland.png" id="2_pd5xk"]
+[ext_resource type="Texture2D" uid="uid://cfgoyikadny2w" path="res://art/Tiphereth.png" id="3_f6xt6"]
+[ext_resource type="PackedScene" uid="uid://5d66itewyv70" path="res://Scenes/card.tscn" id="4_ww2ai"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_onrkg"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_oxp8w")
+"texture": ExtResource("2_pd5xk")
 }],
 "loop": true,
 "name": &"default",
@@ -20,7 +20,7 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_7sfm4")
+"texture": ExtResource("3_f6xt6")
 }],
 "loop": true,
 "name": &"default",
@@ -28,7 +28,7 @@ animations = [{
 }]
 
 [node name="Battle" type="Node2D"]
-script = ExtResource("1_7sfm4")
+script = ExtResource("1_1otgo")
 
 [node name="Player" type="AnimatedSprite2D" parent="."]
 position = Vector2(248, 568)
@@ -65,7 +65,7 @@ offset_bottom = 7269.45
 text = "Health"
 metadata/_edit_use_anchors_ = true
 
-[node name="Card" parent="." node_paths=PackedStringArray("return_position") instance=ExtResource("4_i431l")]
+[node name="Card" parent="." node_paths=PackedStringArray("return_position") instance=ExtResource("4_ww2ai")]
 position = Vector2(528, 632)
 return_position = NodePath("../CardPosition")
 
@@ -79,7 +79,7 @@ offset_right = 464.0
 offset_bottom = 632.0
 text = "Light:"
 
-[node name="Card2" parent="." node_paths=PackedStringArray("return_position") instance=ExtResource("4_i431l")]
+[node name="Card2" parent="." node_paths=PackedStringArray("return_position") instance=ExtResource("4_ww2ai")]
 position = Vector2(608, 632)
 return_position = NodePath("../CardPosition2")
 

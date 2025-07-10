@@ -17,6 +17,6 @@ func _process(delta):
 	$Enemy/EnemyHP.text = "Health: %s" % enemy_hp
 
 
-func _on_card_play_card(name):
+func _on_card_play_card(card):
 	#placeholder until we can figure out how to play different cards
 	enemy_hp -= 10
