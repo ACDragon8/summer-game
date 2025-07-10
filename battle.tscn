@@ -70,6 +70,21 @@ position = Vector2(528, 632)
 return_position = NodePath("../CardPosition")
 
 [node name="CardPosition" type="Marker2D" parent="."]
-position = Vector2(528, 640)
+position = Vector2(528, 632)
+
+[node name="Light" type="Label" parent="."]
+offset_left = 368.0
+offset_top = 592.0
+offset_right = 464.0
+offset_bottom = 632.0
+text = "Light:"
+
+[node name="Card2" parent="." node_paths=PackedStringArray("return_position") instance=ExtResource("4_i431l")]
+position = Vector2(608, 632)
+return_position = NodePath("../CardPosition2")
+
+[node name="CardPosition2" type="Marker2D" parent="."]
+position = Vector2(608, 632)
 
 [connection signal="play_card" from="Card" to="." method="_on_card_play_card"]
+[connection signal="play_card" from="Card2" to="." method="_on_card_play_card"]

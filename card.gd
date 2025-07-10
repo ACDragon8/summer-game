@@ -16,7 +16,7 @@ func _process(delta):
 	if(selected):
 		if Input.is_action_just_pressed("left_click"):
 			DragAndDrop.is_dragging = true
-		if(Input.is_action_pressed("left_click")):
+		if(DragAndDrop.is_dragging):
 			position =	get_viewport().get_mouse_position()
 		if(Input.is_action_pressed("right_click")):
 			selected = false
@@ -25,6 +25,8 @@ func _process(delta):
 			tween.tween_property(self,"global_position",return_position.position,0.2).set_ease(Tween.EASE_OUT)
 		if(Input.is_action_just_released("left_click")):
 			play_card.emit(card_name)
+			selected = false
+			DragAndDrop.is_dragging = false
 			var tween =  get_tree().create_tween()
 			tween.tween_property(self,"global_position",return_position.position,0.2).set_ease(Tween.EASE_OUT)
 	else:
