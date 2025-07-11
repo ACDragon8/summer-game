@@ -1,9 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://52n7o6qni216"]
+[gd_scene load_steps=9 format=3 uid="uid://52n7o6qni216"]
 
 [ext_resource type="Script" uid="uid://bhomttdvb7f0u" path="res://Scripts/battle.gd" id="1_1otgo"]
+[ext_resource type="PackedScene" uid="uid://c45x22ntd6o40" path="res://Scenes/end_turn_button.tscn" id="2_f6xt6"]
 [ext_resource type="Texture2D" uid="uid://7yaxe7knw6jj" path="res://art/Roland.png" id="2_pd5xk"]
 [ext_resource type="Texture2D" uid="uid://cfgoyikadny2w" path="res://art/Tiphereth.png" id="3_f6xt6"]
 [ext_resource type="PackedScene" uid="uid://5d66itewyv70" path="res://Scenes/card.tscn" id="4_ww2ai"]
+[ext_resource type="Script" uid="uid://cmkq8k0xqhkmb" path="res://Scenes/enemy.gd" id="5_f6xt6"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_onrkg"]
 animations = [{
@@ -30,6 +32,9 @@ animations = [{
 [node name="Battle" type="Node2D"]
 script = ExtResource("1_1otgo")
 
+[node name="End Turn Button" parent="." instance=ExtResource("2_f6xt6")]
+position = Vector2(1015, 595)
+
 [node name="Player" type="AnimatedSprite2D" parent="."]
 position = Vector2(248, 568)
 sprite_frames = SubResource("SpriteFrames_onrkg")
@@ -51,6 +56,7 @@ metadata/_edit_use_anchors_ = true
 [node name="Enemy" type="AnimatedSprite2D" parent="."]
 position = Vector2(992, 288)
 sprite_frames = SubResource("SpriteFrames_i431l")
+script = ExtResource("5_f6xt6")
 
 [node name="EnemyHP" type="Label" parent="Enemy"]
 anchors_preset = -1
@@ -86,5 +92,8 @@ return_position = NodePath("../CardPosition2")
 [node name="CardPosition2" type="Marker2D" parent="."]
 position = Vector2(608, 632)
 
+[connection signal="end_player_turn" from="End Turn Button" to="Enemy" method="_on_end_turn_button_end_player_turn"]
+[connection signal="enemy_attack" from="Enemy" to="." method="_on_enemy_enemy_attack"]
+[connection signal="card_chosen" from="Card" to="Card" method="_on_card_chosen"]
 [connection signal="play_card" from="Card" to="." method="_on_card_play_card"]
 [connection signal="play_card" from="Card2" to="." method="_on_card_play_card"]

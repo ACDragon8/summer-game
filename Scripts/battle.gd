@@ -20,3 +20,8 @@ func _process(delta):
 func _on_card_play_card(card):
 	#placeholder until we can figure out how to play different cards
 	enemy_hp -= 10
+
+
+func _on_enemy_enemy_attack() -> void:
+	#placeholder until we get different enemy attacks
+	player_hp -= 10
