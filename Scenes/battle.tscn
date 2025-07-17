@@ -1,11 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://52n7o6qni216"]
+[gd_scene load_steps=10 format=3 uid="uid://52n7o6qni216"]
 
 [ext_resource type="Script" uid="uid://bhomttdvb7f0u" path="res://Scripts/battle.gd" id="1_1otgo"]
 [ext_resource type="PackedScene" uid="uid://c45x22ntd6o40" path="res://Scenes/end_turn_button.tscn" id="2_f6xt6"]
 [ext_resource type="Texture2D" uid="uid://7yaxe7knw6jj" path="res://art/Roland.png" id="2_pd5xk"]
 [ext_resource type="Texture2D" uid="uid://cfgoyikadny2w" path="res://art/Tiphereth.png" id="3_f6xt6"]
 [ext_resource type="PackedScene" uid="uid://5d66itewyv70" path="res://Scenes/card.tscn" id="4_ww2ai"]
-[ext_resource type="Script" uid="uid://cmkq8k0xqhkmb" path="res://Scenes/enemy.gd" id="5_f6xt6"]
+[ext_resource type="Script" uid="uid://cmkq8k0xqhkmb" path="res://Scripts/enemy.gd" id="5_f6xt6"]
+[ext_resource type="Script" uid="uid://lfny7veyggxc" path="res://Scripts/card_hand.gd" id="6_f6xt6"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_onrkg"]
 animations = [{
@@ -71,13 +72,6 @@ offset_bottom = 7269.45
 text = "Health"
 metadata/_edit_use_anchors_ = true
 
-[node name="Card" parent="." node_paths=PackedStringArray("return_position") instance=ExtResource("4_ww2ai")]
-position = Vector2(528, 632)
-return_position = NodePath("../CardPosition")
-
-[node name="CardPosition" type="Marker2D" parent="."]
-position = Vector2(528, 632)
-
 [node name="Light" type="Label" parent="."]
 offset_left = 368.0
 offset_top = 592.0
@@ -85,17 +79,11 @@ offset_right = 464.0
 offset_bottom = 632.0
 text = "Light:"
 
-[node name="Card2" parent="." node_paths=PackedStringArray("return_position") instance=ExtResource("4_ww2ai")]
-position = Vector2(608, 632)
-return_position = NodePath("../CardPosition2")
-
-[node name="CardPosition2" type="Marker2D" parent="."]
-position = Vector2(608, 632)
+[node name="CardHand" type="Node" parent="."]
+script = ExtResource("6_f6xt6")
+card_scene = ExtResource("4_ww2ai")
 
 [connection signal="end_player_turn" from="End Turn Button" to="Enemy" method="_on_end_turn_button_end_player_turn"]
 [connection signal="mouse_entered" from="End Turn Button" to="End Turn Button" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="End Turn Button" to="End Turn Button" method="_on_mouse_exited"]
 [connection signal="enemy_attack" from="Enemy" to="." method="_on_enemy_enemy_attack"]
-[connection signal="card_chosen" from="Card" to="Card" method="_on_card_chosen"]
-[connection signal="play_card" from="Card" to="." method="_on_card_play_card"]
-[connection signal="play_card" from="Card2" to="." method="_on_card_play_card"]

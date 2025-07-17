@@ -18,7 +18,6 @@ animations = [{
 size = Vector2(64, 96)
 
 [node name="Card" type="Area2D"]
-position = Vector2(192, 128)
 script = ExtResource("1_rjlel")
 metadata/_edit_group_ = true
 

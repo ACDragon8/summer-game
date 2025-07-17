@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://c45x22ntd6o40"]
 
 [ext_resource type="Texture2D" uid="uid://oo8x6u4qgks7" path="res://art/end_turn_button.png" id="1_rm2wf"]
-[ext_resource type="Script" uid="uid://bh0qjhl5va7jt" path="res://Scenes/end_turn_button.gd" id="1_t7hlu"]
+[ext_resource type="Script" uid="uid://bh0qjhl5va7jt" path="res://Scripts/end_turn_button.gd" id="1_t7hlu"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6c1hy"]
 animations = [{

@@ -9,6 +9,7 @@ func _ready():
 	player_hp = 100
 	enemy_hp = 100
 	light = 0
+	$CardHand.draw_cards()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -17,7 +18,7 @@ func _process(delta):
 	$Enemy/EnemyHP.text = "Health: %s" % enemy_hp
 
 
-func _on_card_play_card(card):
+func on_card_play_card(card):
 	#placeholder until we can figure out how to play different cards
 	enemy_hp -= 10
 

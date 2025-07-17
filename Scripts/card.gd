@@ -31,7 +31,8 @@ func _process(delta):
 			#instantly playing after releasing the click
 			if (return_position.position.y - position.y > 40):
 				play_card.emit(card_name)
-			card_chosen.emit(card_name)
+			else:
+				card_chosen.emit(card_name)
 			selected = false
 			DragAndDrop.is_dragging = false
 			var tween =  get_tree().create_tween()
