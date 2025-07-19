@@ -5,12 +5,11 @@ extends Area2D
 signal play_card(card)
 signal card_chosen(card)
 var selected
-var card_name
-
+var card : Card
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	card_name = "attack"
+	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -30,9 +29,9 @@ func _process(delta):
 			#This little if statement below is to prevent the card from 
 			#instantly playing after releasing the click
 			if (return_position.position.y - position.y > 40):
-				play_card.emit(card_name)
+				play_card.emit(card)
 			else:
-				card_chosen.emit(card_name)
+				card_chosen.emit(card)
 			selected = false
 			DragAndDrop.is_dragging = false
 			var tween =  get_tree().create_tween()
@@ -54,5 +53,9 @@ func _on_mouse_exited():
 		selected = false
 		scale = Vector2(1,1)
 
-func _on_card_chosen(card: String) -> void:
-	DragAndDrop.card_selected = card_name
+func _on_card_chosen(card: Card) -> void:
+	DragAndDrop.card_selected = card
+
+func load_card(c):
+	card = c
+	$AnimatedSprite2D.play(card.name)

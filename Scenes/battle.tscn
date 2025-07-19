@@ -54,6 +54,19 @@ offset_bottom = -625.192
 text = "Health"
 metadata/_edit_use_anchors_ = true
 
+[node name="PlayerShield" type="Label" parent="Player"]
+anchors_preset = -1
+anchor_left = -0.406
+anchor_top = -0.578
+anchor_right = 4.531
+anchor_bottom = 0.891
+offset_left = 71.936
+offset_top = 79.936
+offset_right = -1063.94
+offset_bottom = -649.192
+text = "Shield"
+metadata/_edit_use_anchors_ = true
+
 [node name="Enemy" type="AnimatedSprite2D" parent="."]
 position = Vector2(992, 288)
 sprite_frames = SubResource("SpriteFrames_i431l")
