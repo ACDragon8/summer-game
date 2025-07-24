@@ -36,6 +36,7 @@ func _process(delta):
 			DragAndDrop.is_dragging = false
 			var tween =  get_tree().create_tween()
 			tween.tween_property(self,"global_position",return_position.position,0.2).set_ease(Tween.EASE_OUT)
+			hide() # maybe replace with a destroy function who knows
 	else:
 		if DragAndDrop.is_dragging and Input.is_action_just_released("left_click"):
 			DragAndDrop.is_dragging = false

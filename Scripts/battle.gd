@@ -1,5 +1,7 @@
 extends Node2D
 
+signal new_turn()
+
 var player_hp
 var player_shield
 var enemy_hp
@@ -29,6 +31,7 @@ func on_card_play_card(card):
 func _on_enemy_enemy_attack() -> void:
 	#placeholder until we get different enemy attacks
 	player_damage(10)
+
 
 func enemy_damage(amt):
 	enemy_hp -= amt
