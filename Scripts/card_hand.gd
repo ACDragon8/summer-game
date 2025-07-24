@@ -1,7 +1,7 @@
 extends Node
 
 @export var card_scene : PackedScene
-@export var hand_size = 2
+@export var hand_size = 4
 @export var hand_pos_y = 600
 @export var hand_center_x = 700
 @export var card_spacing = 80
@@ -11,7 +11,7 @@ var deck : Array
 var discard = []
 
 func _ready():
-	deck = [Attack.new(),Attack.new(),Attack.new(), Defend.new(),Defend.new()]
+	deck = [Attack.new(),Attack.new(),Attack.new(), Defend.new(),Defend.new(),ChargeAndCover.new()]
 	deck.shuffle()
 
 
@@ -27,9 +27,7 @@ func draw_cards() -> void:
 		card_marker.position = Vector2(hand_center_x + card_spacing * spacer , hand_pos_y)
 		card_drawn.return_position = card_marker
 		
-		var c : Card = deck.pop_front()
-		card_drawn.load_card(c)
-		deck.push_back(c)
+		draw_card(card_drawn)
 		
 		add_child(card_drawn)
 		add_child(card_marker)
@@ -40,8 +38,11 @@ func draw_cards() -> void:
 func draw_card(battle_card):
 	var c : Card = deck.pop_front()
 	battle_card.load_card(c)
+	#TODO: Make is that this happens when a card is played rather than here
 	deck.push_back(c)
 	battle_card.show()
+
+
 
 
 func _on_end_turn_button_end_player_turn():

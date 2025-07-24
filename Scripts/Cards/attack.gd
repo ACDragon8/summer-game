@@ -2,10 +2,9 @@ class_name Attack
 
 extends Card
 
-var value
-
 func _init():
 	name = "attack"
+	cost = 1
 	value = 10
 
 func play_card(battle):
