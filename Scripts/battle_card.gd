@@ -30,6 +30,7 @@ func _process(delta):
 			#instantly playing after releasing the click
 			if (return_position.position.y - position.y > 40):
 				play_card.emit(card)
+				print("play card")
 			else:
 				card_chosen.emit(card)
 			selected = false

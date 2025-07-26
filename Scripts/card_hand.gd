@@ -32,17 +32,18 @@ func draw_cards() -> void:
 		add_child(card_drawn)
 		add_child(card_marker)
 		card_drawn.connect("play_card", battle.on_card_play_card)
+		card_drawn.connect("play_card", self.on_card_play_card)
 		spacer += 1
 		current_hand.push_back(card_drawn)
 
 func draw_card(battle_card):
 	var c : Card = deck.pop_front()
 	battle_card.load_card(c)
-	#TODO: Make is that this happens when a card is played rather than here
-	deck.push_back(c)
 	battle_card.show()
 
-
+func on_card_play_card(card):
+	#placeholder until we can figure out how to play different cards
+	deck.push_back(card)
 
 
 func _on_end_turn_button_end_player_turn():
