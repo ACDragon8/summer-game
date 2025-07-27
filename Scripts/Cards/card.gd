@@ -10,3 +10,10 @@ func _init():
 
 func play_card(battle):
 	print("card: " +name)
+	battle.light = battle.light - cost
+
+func is_playable(battle) -> bool:
+	if battle.light >= cost:
+		return true
+	print("Not enough light to play")
+	return false

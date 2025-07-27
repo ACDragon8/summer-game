@@ -30,8 +30,9 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Battle" type="Node2D"]
+[node name="Battle" type="Node2D" node_paths=PackedStringArray("light_display")]
 script = ExtResource("1_1otgo")
+light_display = NodePath("Light")
 
 [node name="End Turn Button" parent="." instance=ExtResource("2_f6xt6")]
 position = Vector2(1015, 595)
@@ -96,6 +97,7 @@ text = "Light:"
 script = ExtResource("6_f6xt6")
 card_scene = ExtResource("4_ww2ai")
 
+[connection signal="end_player_turn" from="End Turn Button" to="." method="_on_player_end_turn"]
 [connection signal="end_player_turn" from="End Turn Button" to="Enemy" method="_on_end_turn_button_end_player_turn"]
 [connection signal="end_player_turn" from="End Turn Button" to="CardHand" method="_on_end_turn_button_end_player_turn"]
 [connection signal="mouse_entered" from="End Turn Button" to="End Turn Button" method="_on_mouse_entered"]

@@ -41,9 +41,9 @@ func draw_card(battle_card):
 	battle_card.load_card(c)
 	battle_card.show()
 
-func on_card_play_card(card):
+func on_card_play_card(battle_card):
 	#placeholder until we can figure out how to play different cards
-	deck.push_back(card)
+	deck.push_back(battle_card.card)
 
 
 func _on_end_turn_button_end_player_turn():

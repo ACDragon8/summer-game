@@ -2,8 +2,8 @@ extends Area2D
 
 @export var return_position : Marker2D
 
-signal play_card(card)
-signal card_chosen(card)
+signal play_card(battle_card)
+#signal card_chosen(battle_card)
 var selected
 var card : Card
 
@@ -29,15 +29,13 @@ func _process(delta):
 			#This little if statement below is to prevent the card from 
 			#instantly playing after releasing the click
 			if (return_position.position.y - position.y > 40):
-				play_card.emit(card)
-				print("play card")
-			else:
-				card_chosen.emit(card)
+				play_card.emit(self)
+			#else:
+			#	card_chosen.emit(self)
 			selected = false
 			DragAndDrop.is_dragging = false
 			var tween =  get_tree().create_tween()
 			tween.tween_property(self,"global_position",return_position.position,0.2).set_ease(Tween.EASE_OUT)
-			hide() # maybe replace with a destroy function later who knows
 	else:
 		if DragAndDrop.is_dragging and Input.is_action_just_released("left_click"):
 			DragAndDrop.is_dragging = false
@@ -60,4 +58,5 @@ func _on_card_chosen(card: Card) -> void:
 
 func load_card(c):
 	card = c
+	$Cost.text = str(c.cost)
 	$AnimatedSprite2D.play(card.name)
