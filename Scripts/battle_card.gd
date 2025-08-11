@@ -30,14 +30,13 @@ func _process(delta):
 			#instantly playing after releasing the click
 			if (return_position.position.y - position.y > 40):
 				play_card.emit(card)
-				print("play card")
 			else:
 				card_chosen.emit(card)
 			selected = false
 			DragAndDrop.is_dragging = false
 			var tween =  get_tree().create_tween()
 			tween.tween_property(self,"global_position",return_position.position,0.2).set_ease(Tween.EASE_OUT)
-			hide() # maybe replace with a destroy function later who knows
+			queue_free()
 	else:
 		if DragAndDrop.is_dragging and Input.is_action_just_released("left_click"):
 			DragAndDrop.is_dragging = false

@@ -1,11 +1,13 @@
 extends Node2D
 
 signal new_turn()
+signal enemy_dead()
 
 var player_hp
 var player_shield
 var enemy_hp
 var light
+var fight
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -13,6 +15,7 @@ func _ready():
 	player_shield = 0
 	enemy_hp = 100
 	light = 0
+	fight = true
 	$CardHand.draw_cards()
 
 
@@ -21,11 +24,20 @@ func _process(_delta):
 	$Player/PlayerHP.text = "Health: %s" % player_hp
 	$Player/PlayerShield.text = "Shield: %s" % player_shield
 	$Enemy/EnemyHP.text = "Health: %s" % enemy_hp
+	if fight:
+		if enemy_hp <= 0:
+			fight = false
+			enemy_dead.emit()
+			print("dead")
+	
 
 
 func on_card_play_card(card):
 	#placeholder until we can figure out how to play different cards
-	card.play_card(self)
+	if fight:
+		print("play")
+		card.play_card(self)
+	
 
 
 func _on_enemy_enemy_attack() -> void:

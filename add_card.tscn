@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://tv0kjax3qqp5"]
+
+[ext_resource type="Script" uid="uid://d15robekyrae3" path="res://add_card.gd" id="1_pqjuv"]
+
+[node name="AddCard" type="Window"]
+position = Vector2i(100, 100)
+size = Vector2i(400, 200)
+script = ExtResource("1_pqjuv")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 20.0
+offset_top = 156.0
+offset_right = 60.0
+offset_bottom = 172.0
