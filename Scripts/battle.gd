@@ -1,15 +1,20 @@
 extends Node2D
 
 signal new_turn()
+signal enemy_dead()
 
 var player_hp
 var player_shield
 var enemy_hp
 var light
+var fight
 @export var light_display : Label
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	start_fight()
+
+func start_fight():
 	player_hp = 100
 	player_shield = 0
 	enemy_hp = 100
@@ -42,6 +47,8 @@ func _on_enemy_enemy_attack() -> void:
 
 func enemy_damage(amt):
 	enemy_hp -= amt
+	if enemy_hp <= 0:
+		enemy_dead.emit()
 
 func player_damage(amt):
 	player_shield -= amt

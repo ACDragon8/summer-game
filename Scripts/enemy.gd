@@ -1,6 +1,7 @@
 extends AnimatedSprite2D
 
 signal enemy_attack()
+signal enemy_dead()
 
 
 func _ready() -> void:
@@ -13,7 +14,8 @@ func attack() -> void:
 	atk.tween_property(self,"global_position", old_position, 0.2)
 	atk.connect("finished", on_tween_finished)
 	enemy_attack.emit()
-	
+
+
 
 
 func _on_end_turn_button_end_player_turn() -> void:

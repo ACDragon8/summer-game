@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://52n7o6qni216"]
+[gd_scene load_steps=13 format=3 uid="uid://52n7o6qni216"]
 
 [ext_resource type="Script" uid="uid://bhomttdvb7f0u" path="res://Scripts/battle.gd" id="1_1otgo"]
 [ext_resource type="PackedScene" uid="uid://c45x22ntd6o40" path="res://Scenes/end_turn_button.tscn" id="2_f6xt6"]
@@ -7,6 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://5d66itewyv70" path="res://Scenes/card.tscn" id="4_ww2ai"]
 [ext_resource type="Script" uid="uid://cmkq8k0xqhkmb" path="res://Scripts/enemy.gd" id="5_f6xt6"]
 [ext_resource type="Script" uid="uid://lfny7veyggxc" path="res://Scripts/card_hand.gd" id="6_f6xt6"]
+[ext_resource type="Script" uid="uid://b6o5mjhlkliym" path="res://Scenes/add_card.gd" id="8_k7mbx"]
+[ext_resource type="PackedScene" uid="uid://brq66ynmavfxc" path="res://Scenes/rewards.tscn" id="8_qeyqd"]
+[ext_resource type="Script" uid="uid://d4gxle5jt6crt" path="res://Scripts/rewards.gd" id="9_qeyqd"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_onrkg"]
 animations = [{
@@ -97,9 +100,23 @@ text = "Light:"
 script = ExtResource("6_f6xt6")
 card_scene = ExtResource("4_ww2ai")
 
+[node name="AddCard" type="Button" parent="."]
+offset_left = 256.0
+offset_top = 736.0
+offset_right = 336.0
+offset_bottom = 760.0
+script = ExtResource("8_k7mbx")
+
+[node name="Rewards" parent="." instance=ExtResource("8_qeyqd")]
+visible = false
+script = ExtResource("9_qeyqd")
+
+[connection signal="enemy_dead" from="." to="Rewards" method="_on_battle_enemy_dead"]
+[connection signal="enemy_dead" from="." to="AddCard" method="_on_battle_enemy_dead"]
 [connection signal="end_player_turn" from="End Turn Button" to="." method="_on_player_end_turn"]
 [connection signal="end_player_turn" from="End Turn Button" to="Enemy" method="_on_end_turn_button_end_player_turn"]
 [connection signal="end_player_turn" from="End Turn Button" to="CardHand" method="_on_end_turn_button_end_player_turn"]
 [connection signal="mouse_entered" from="End Turn Button" to="End Turn Button" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="End Turn Button" to="End Turn Button" method="_on_mouse_exited"]
 [connection signal="enemy_attack" from="Enemy" to="." method="_on_enemy_enemy_attack"]
+[connection signal="pressed" from="AddCard" to="CardHand" method="_on_add_card_pressed"]

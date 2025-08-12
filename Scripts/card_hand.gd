@@ -9,6 +9,7 @@ extends Node
 var current_hand = []
 var deck : Array
 var discard = []
+var all_cards = ["Attack", "Defend", "Charge and Cover"]
 
 func _ready():
 	deck = [Attack.new(),Attack.new(),Attack.new(), Defend.new(),Defend.new(),ChargeAndCover.new()]
@@ -50,3 +51,25 @@ func _on_end_turn_button_end_player_turn():
 	for c in current_hand:
 		if(!c.visible):
 			draw_card(c)
+
+func add_card_to_deck(card):
+	deck.push_back(build_card(card))
+
+func build_card(card):
+	match card:
+		"Attack":
+			return Attack.new()
+		"Defend":
+			return Defend.new()
+		"Charge and Cover":
+			return ChargeAndCover.new()
+
+func add_random_card():
+	var x = randi_range(0,all_cards.size()-1)
+	var card = all_cards[x]
+	print("add card" + card)
+	add_card_to_deck(card)
+
+
+func _on_add_card_pressed():
+	add_random_card()
