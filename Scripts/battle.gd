@@ -7,6 +7,7 @@ var player_hp
 var player_shield
 var enemy_hp
 var light
+@export var light_display : Label
 var fight
 
 # Called when the node enters the scene tree for the first time.
@@ -15,7 +16,6 @@ func _ready():
 	player_shield = 0
 	enemy_hp = 100
 	light = 0
-	fight = true
 	$CardHand.draw_cards()
 
 
@@ -32,12 +32,9 @@ func _process(_delta):
 	
 
 
-func on_card_play_card(card):
+func on_card_play_card(battle_card):
 	#placeholder until we can figure out how to play different cards
-	if fight:
-		print("play")
-		card.play_card(self)
-	
+	card.play_card(self)
 
 
 func _on_enemy_enemy_attack() -> void:
@@ -57,3 +54,8 @@ func player_damage(amt):
 func player_block(amt):
 	player_shield += amt
 	
+
+#This is to reset the light
+func _on_player_end_turn() -> void:
+	light = 2
+	light_display.text = "Light: " + str(light)

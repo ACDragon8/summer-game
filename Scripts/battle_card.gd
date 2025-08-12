@@ -2,8 +2,8 @@ extends Area2D
 
 @export var return_position : Marker2D
 
-signal play_card(card)
-signal card_chosen(card)
+signal play_card(battle_card)
+#signal card_chosen(battle_card)
 var selected
 var card : Card
 
@@ -32,6 +32,9 @@ func _process(delta):
 				play_card.emit(card)
 			else:
 				card_chosen.emit(card)
+				play_card.emit(self)
+			#else:
+			#	card_chosen.emit(self)
 			selected = false
 			DragAndDrop.is_dragging = false
 			var tween =  get_tree().create_tween()
@@ -59,4 +62,5 @@ func _on_card_chosen(card: Card) -> void:
 
 func load_card(c):
 	card = c
+	$Cost.text = str(c.cost)
 	$AnimatedSprite2D.play(card.name)

@@ -12,3 +12,9 @@ func play_card(battle):
 	battle.enemy_damage(value)
 	battle.player_block(value)
 	
+func is_playable(battle):
+	if !super(battle):
+		return false
+	else:
+		print("Checking extra conditions...")
+		return true

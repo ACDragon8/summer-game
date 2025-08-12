@@ -1,125 +1,125 @@
 Lore:
-    Game will follow a chapter format - ie player is building their 'story'
+	Game will follow a chapter format - ie player is building their 'story'
 
-    As player defeats enemies, more pages are added to their 'storybook'
+	As player defeats enemies, more pages are added to their 'storybook'
 
-    Stealing the stories of the old library of ruina
+	Stealing the stories of the old library of ruina
 
-    Also every time clearing a floor we can give a little bit of lore via cutscene or smthing
+	Also every time clearing a floor we can give a little bit of lore via cutscene or smthing
 
-    Chapter 0:
-        backstory of the OC
-        maybe is locked/faded/unreadable and gets unscrambled as runs go
-        Gives them their basic powers
-        Maybe also other upgrades so its roguelite not roguelike? idk tho it might not fit lore
-    Chapter 1:
-        Every time player is defeated, restart at Chapter 1
-        Lower tree of life (Briah I think)
-        Randomizes between Malkuth, Yesod, Hod, and Netzach floors
-        
-    Chapter 2:
-        Randomizes between Tiphereth, Gebura, and Chesed floors
-    
-    Chapter 3:
-        Randomizes between Binah and Hokma
-            maybe we can add in keter? i kind of want to make roland a wandering boss monster though
+	Chapter 0:
+		backstory of the OC
+		maybe is locked/faded/unreadable and gets unscrambled as runs go
+		Gives them their basic powers
+		Maybe also other upgrades so its roguelite not roguelike? idk tho it might not fit lore
+	Chapter 1:
+		Every time player is defeated, restart at Chapter 1
+		Lower tree of life (Briah I think)
+		Randomizes between Malkuth, Yesod, Hod, and Netzach floors
+		
+	Chapter 2:
+		Randomizes between Tiphereth, Gebura, and Chesed floors
+	
+	Chapter 3:
+		Randomizes between Binah and Hokma
+			maybe we can add in keter? i kind of want to make roland a wandering boss monster though
 
-    Chapter 4:
-        Keter
-        boss fight against Angela
-        even if we win we still don't because its all a simulation
-    
-    Eventually they are supposed to piece together all of the library and confront Angela
+	Chapter 4:
+		Keter
+		boss fight against Angela
+		even if we win we still don't because its all a simulation
+	
+	Eventually they are supposed to piece together all of the library and confront Angela
 
-    Maybe? Chapter 5:
-        Final fight between Angela and OC
-            Normal/Bad ending: If defeat angela, claim the library's power and become its new head librarian, perpetuating city cycle
-            True ending: refuse to fight angela and convince her to release the light
-                light gets released and player along with others are set free in the city
-                player leaves with their ego equiment of their 'storybook' which makes 
-                them as strong as a color fixer cuz theyve been fighting effectively color fixer level threats
-            
+	Maybe? Chapter 5:
+		Final fight between Angela and OC
+			Normal/Bad ending: If defeat angela, claim the library's power and become its new head librarian, perpetuating city cycle
+			True ending: refuse to fight angela and convince her to release the light
+				light gets released and player along with others are set free in the city
+				player leaves with their ego equiment of their 'storybook' which makes 
+				them as strong as a color fixer cuz theyve been fighting effectively color fixer level threats
+			
 
 
 Map Gameplay Ideas: (card getting, upgrades etc.)
-    Beating an enemy gives choice of like 3 cards which are fixed
-        Maybe 1 or 2 passives + card
-    Player chooses 1, may be able to spend money to get 2 cards from a certain enemy
+	Beating an enemy gives choice of like 3 cards which are fixed
+		Maybe 1 or 2 passives + card
+	Player chooses 1, may be able to spend money to get 2 cards from a certain enemy
 
-    
+	
 
 
 
 
 Card Ideas:
-    Original Character:
-        Starting Deck: 9x cards
-            Attack x3
-            Defend x3
-            Charge and Cover x1
-            Buff card? x1
-            debuff card? x1
+	Original Character:
+		Starting Deck: 9x cards
+			Attack x3
+			Defend x3
+			Charge and Cover x1
+			Buff card? x1
+			debuff card? x1
 
 
 
 
 Enemy Ideas:
-    Abnormalities:
-        Mob:
-            
-        Elite:
-            
+	Abnormalities:
+		Mob:
+			
+		Elite:
+			
 
-        
-    Former Guests
-        Mob:
-            Rats
-            Zwei Crew
+		
+	Former Guests
+		Mob:
+			Rats
+			Zwei Crew
 
-        Elite
-            Finn
-            Lulu 
-            Mars - maybe we can do combo skills w/ lulu
-            Tommerry
-            
-            Lowell
-            Nikolai
-
-
-        Distortion:
-            Rampaging Man (definitely not Roland)
-                no music / sound effects are muted
-                dark atmosphere
-                cannot defeat him
-                last X turns to get a card
-            
-            Image of Angelica?
-            
-            The rest of the distortion ensemble
-
-            Yan
-            Bamboo Hatted Kim? or maybe he elite
-
-        
-        EGO:
-            Red Mist
-            Xiao
-            Philip (Angel)
-            Myo
-            Purple Tear
-            Yujin
+		Elite
+			Finn
+			Lulu 
+			Mars - maybe we can do combo skills w/ lulu
+			Tommerry
+			
+			Lowell
+			Nikolai
 
 
+		Distortion:
+			Rampaging Man (definitely not Roland)
+				no music / sound effects are muted
+				dark atmosphere
+				cannot defeat him
+				last X turns to get a card
+			
+			Image of Angelica?
+			
+			The rest of the distortion ensemble
+
+			Yan
+			Bamboo Hatted Kim? or maybe he elite
+
+		
+		EGO:
+			Red Mist
+			Xiao
+			Philip (Angel)
+			Myo
+			Purple Tear
+			Yujin
 
 
 
-    Sephiroth
-        Malkuth
-        Yesod
-        Hod
-        Netzach
-        Tiphereth
-        Gebura
-        Chesed
-        Binah
-        Hokma (nutz)
+
+
+	Sephiroth
+		Malkuth
+		Yesod
+		Hod
+		Netzach
+		Tiphereth
+		Gebura
+		Chesed
+		Binah
+		Hokma (nutz)
