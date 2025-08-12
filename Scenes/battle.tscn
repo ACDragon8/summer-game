@@ -108,11 +108,10 @@ offset_bottom = 760.0
 script = ExtResource("8_k7mbx")
 
 [node name="Rewards" parent="." instance=ExtResource("8_qeyqd")]
-visible = false
 script = ExtResource("9_qeyqd")
 
-[connection signal="enemy_dead" from="." to="Rewards" method="_on_battle_enemy_dead"]
 [connection signal="enemy_dead" from="." to="AddCard" method="_on_battle_enemy_dead"]
+[connection signal="enemy_dead" from="." to="Rewards" method="_on_battle_enemy_dead"]
 [connection signal="end_player_turn" from="End Turn Button" to="." method="_on_player_end_turn"]
 [connection signal="end_player_turn" from="End Turn Button" to="Enemy" method="_on_end_turn_button_end_player_turn"]
 [connection signal="end_player_turn" from="End Turn Button" to="CardHand" method="_on_end_turn_button_end_player_turn"]
